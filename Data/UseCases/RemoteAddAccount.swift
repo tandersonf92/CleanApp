@@ -1,10 +1,6 @@
 import Domain
 import Foundation
 
-public protocol HttpPostClient {
-    func post(to url: URL, with data: Data?)
-}
-
 public final class RemoteAddAccount {
     private let url: URL
     private let httpClient: HttpPostClient
