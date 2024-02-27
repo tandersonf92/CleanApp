@@ -13,6 +13,7 @@
 		87A9F3B62B8D017D00B93A99 /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9F3B52B8D017D00B93A99 /* RemoteAddAccountTests.swift */; };
 		87A9F3BF2B8D019F00B93A99 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A9F3992B8CFFE400B93A99 /* Domain.framework */; };
 		87A9F3C02B8D019F00B93A99 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87A9F3992B8CFFE400B93A99 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87ADC1F32B8E711100165FDD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADC1F22B8E711100165FDD /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		87A9F3A92B8D017D00B93A99 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A9F3B02B8D017D00B93A99 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A9F3B52B8D017D00B93A99 /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
+		87ADC1F22B8E711100165FDD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				87A9F3A02B8D004B00B93A99 /* AddAccountUseCase.swift */,
 				87A9F3A22B8D010B00B93A99 /* AccountModel.swift */,
+				87ADC1F22B8E711100165FDD /* Model.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87ADC1F32B8E711100165FDD /* Model.swift in Sources */,
 				87A9F3A12B8D004B00B93A99 /* AddAccountUseCase.swift in Sources */,
 				87A9F3A32B8D010B00B93A99 /* AccountModel.swift in Sources */,
 			);
