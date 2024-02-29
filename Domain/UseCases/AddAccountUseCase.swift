@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol AddAccountUseCase {
-    func add(addAccountModel: AddAccountModel, completion: @escaping( Result<AccountModel, Error>) -> Void)
+    func add(addAccountModel: AddAccountModel, completion: @escaping( Result<AccountModel, DomainError>) -> Void)
 }
 
 public struct AddAccountModel: Model {
