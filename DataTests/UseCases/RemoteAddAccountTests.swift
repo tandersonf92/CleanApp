@@ -6,7 +6,7 @@ import XCTest
 final class RemoteAddAccountTests: XCTestCase {
     func test_add_shouldCallHttpClientWithCorrectUrl() {
         let (sut, httpClientSpy) = makeSut()
-        let url = URL(string: "http://any-url.com")!
+        let url = makeURL()
 
         sut.add(addAccountModel: makeAddAccountModel()) { _ in }
 
@@ -43,7 +43,7 @@ final class RemoteAddAccountTests: XCTestCase {
         let (sut, httpClientSpy) = makeSut()
 
         expect(sut, completeWith: .failure(.unexpected), when: {
-            httpClientSpy.completeWithData(Data("invalid_data".utf8))
+            httpClientSpy.completeWithData(makeInvalidData())
         })
     }
 }
@@ -72,6 +72,14 @@ extension RemoteAddAccountTests {
         }
         action()
         wait(for: [exp], timeout: 1)
+    }
+
+    func makeInvalidData() -> Data {
+        Data("invalid_data".utf8)
+    }
+
+    func makeURL() -> URL {
+        URL(string: "http://any-url.com")!
     }
 
     func makeAddAccountModel() -> AddAccountModel {
