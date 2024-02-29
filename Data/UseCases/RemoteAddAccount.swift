@@ -16,8 +16,10 @@ public final class RemoteAddAccount: AddAccountUseCase {
             case .success(let data):
                 if let model: AccountModel = data.toModel() {
                     completion(.success(model))
+                } else {
+                    completion(.failure(.unexpected))       
                 }
-            case .failure(let failure):
+            case .failure:
                 completion(.failure(.unexpected))
             }
         }
