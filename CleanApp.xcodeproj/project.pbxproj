@@ -17,6 +17,7 @@
 		87ADC1F52B8E71B800165FDD /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADC1F42B8E71B800165FDD /* RemoteAddAccount.swift */; };
 		87ADC1FB2B8E727600165FDD /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADC1FA2B8E727600165FDD /* HttpPostClient.swift */; };
 		87C87B8C2B93CB49000B70CC /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C87B8B2B93CB49000B70CC /* AlamofireAdapter.swift */; };
+		87C87B902B93CBFF000B70CC /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C87B8F2B93CBFF000B70CC /* UrlProtocolStub.swift */; };
 		87CF92912B90B6D1001FBC14 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92902B90B6D1001FBC14 /* DomainError.swift */; };
 		87CF92942B90B968001FBC14 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92932B90B968001FBC14 /* HttpError.swift */; };
 		87CF92972B90C9FC001FBC14 /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92962B90C9FC001FBC14 /* ExtensionHelpers.swift */; };
@@ -100,6 +101,7 @@
 		87ADC1F42B8E71B800165FDD /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		87ADC1FA2B8E727600165FDD /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 		87C87B8B2B93CB49000B70CC /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
+		87C87B8F2B93CBFF000B70CC /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		87CF92902B90B6D1001FBC14 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		87CF92932B90B968001FBC14 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		87CF92962B90C9FC001FBC14 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		87C87B8E2B93CBEF000B70CC /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				87C87B8F2B93CBFF000B70CC /* UrlProtocolStub.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		87CF928F2B90B6C6001FBC14 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +323,7 @@
 		87CF92B22B90FB16001FBC14 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
+				87C87B8E2B93CBEF000B70CC /* Http */,
 				87CF92B32B90FB16001FBC14 /* AlamoFireAdapterTests.swift */,
 			);
 			path = InfraTests;
@@ -585,6 +596,7 @@
 				87CF92C22B90FC04001FBC14 /* TestFactories.swift in Sources */,
 				87CF92B42B90FB16001FBC14 /* AlamoFireAdapterTests.swift in Sources */,
 				87CF92C12B90FBF9001FBC14 /* TestExtensions.swift in Sources */,
+				87C87B902B93CBFF000B70CC /* UrlProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
