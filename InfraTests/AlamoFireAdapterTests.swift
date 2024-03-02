@@ -9,7 +9,7 @@ class AlamoFireAdapter {
     }
 
     func post(to url: URL, with data: Data?) {
-        let json = try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed) as? [String: Any]
+        let json = data == nil ? nil : try? JSONSerialization.jsonObject(with: data!, options: .fragmentsAllowed) as? [String: Any]
         session.request(url, method: .post, parameters: json, encoding: JSONEncoding.default).resume()
     }
 }
@@ -21,13 +21,29 @@ final class AlamoFireAdapterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: configuration)
         let sut = AlamoFireAdapter(session: session)
-        
+
         sut.post(to: url, with: makeValidData())
         let exp = expectation(description: "waiting")
         URLProtocolStub.observerRequest { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+
+    func test_post_ShouldMakeRequestWithNoData() {
+        let url = makeURL()
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = Session(configuration: configuration)
+        let sut = AlamoFireAdapter(session: session)
+
+        sut.post(to: url, with: nil)
+        let exp = expectation(description: "waiting")
+        URLProtocolStub.observerRequest { request in
+            XCTAssertNil(request.httpBodyStream)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
