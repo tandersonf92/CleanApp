@@ -14,7 +14,7 @@ class AlamoFireAdapter {
 }
 
 final class AlamoFireAdapterTests: XCTestCase {
-    func test_() {
+    func test_post_ShouldMakeRequestWithValidUrlAndMethod() {
         let url = makeURL()
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [URLProtocolStub.self]
