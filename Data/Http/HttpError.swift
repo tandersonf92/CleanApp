@@ -1,3 +1,7 @@
 public enum HttpError: Error {
-    case noConnectivityError
+    case noConnectivityError,
+         badRequest,
+         serverError,
+         unauthorized,
+         forbidden
 }

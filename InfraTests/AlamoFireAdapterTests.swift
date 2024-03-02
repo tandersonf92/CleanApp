@@ -2,23 +2,38 @@ import Alamofire
 import XCTest
 import Data
 
-class AlamoFireAdapter {
+class AlamoFireAdapter: HttpPostClient {
     private var session: Session
 
     init(session: Session = .default) {
         self.session = session
     }
 
-    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void) {
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
         session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
-            guard dataResponse.response?.statusCode != nil else {
+            guard let statusCode = dataResponse.response?.statusCode else {
                 return completion(.failure(.noConnectivityError))
             }
             switch dataResponse.result {
-            case .success(let data):
-                completion(.success(data))
-            case .failure(let failure):
+            case .failure:
                 completion(.failure(.noConnectivityError))
+            case .success(let data):
+                switch statusCode {
+                case 204:
+                    completion(.success(nil))
+                case 200...299:
+                    completion(.success(data))
+                case 401:
+                    completion(.failure(.unauthorized))
+                case 403:
+                    completion(.failure(.forbidden))
+                case 400...499:
+                    completion(.failure(.badRequest))
+                case 500...599:
+                    completion(.failure(.serverError))
+                default:
+                    completion(.failure(.noConnectivityError))
+                }
             }
         }
     }
@@ -35,7 +50,6 @@ final class AlamoFireAdapterTests: XCTestCase {
     }
 
     func test_post_ShouldMakeRequestWithNoData() {
-        let sut = makeSut()
         testRequestFor(url: makeURL(), data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
@@ -52,6 +66,27 @@ final class AlamoFireAdapterTests: XCTestCase {
         expectResult(.failure(.noConnectivityError), when: (data: nil, response: makeHttpResponse(), error: makeError()))
         expectResult(.failure(.noConnectivityError), when: (data: nil, response: makeHttpResponse(), error: nil))
         expectResult(.failure(.noConnectivityError), when: (data: nil, response: nil, error: nil))
+    }
+
+    func test_post_ShouldCompleteWithDataWhenRequestCompletesWith200() {
+        expectResult(.success(nil), when: (data: nil, response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: makeEmptyData(), response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 204), error: nil))
+    }
+
+    func test_post_ShouldCompleteWithNoDataWhenRequestCompletesWith204() {
+        expectResult(.success(makeValidData()), when: (data: makeValidData(), response: makeHttpResponse(), error: nil))
+    }
+
+    func test_post_ShouldCompleteWithErrorWhenRequestCompletesWithNon200() {
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 400), error: nil))
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 450), error: nil))
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 499), error: nil))
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 500), error: nil))
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 550), error: nil))
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 599), error: nil))
+        expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 401), error: nil))
+        expectResult(.failure(.forbidden), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 403), error: nil))
     }
 }
 
@@ -78,7 +113,7 @@ extension AlamoFireAdapterTests {
         action(request!)
     }
 
-    func expectResult(_ expectedResult: Result<Data, HttpError>,
+    func expectResult(_ expectedResult: Result<Data?, HttpError>,
                       when stub: (data: Data?, response: HTTPURLResponse?, error: Error?),
                       file: StaticString = #filePath,
                       line: UInt = #line) {

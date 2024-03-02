@@ -7,6 +7,9 @@ func makeInvalidData() -> Data {
 func makeValidData() -> Data {
     Data("{\"name\":\"Rodrigo\"}".utf8)
 }
+func makeEmptyData() -> Data {
+    Data()
+}
 
 func makeURL() -> URL {
     URL(string: "http://any-url.com")!
