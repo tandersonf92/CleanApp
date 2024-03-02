@@ -9,15 +9,22 @@ class AlamoFireAdapter {
         self.session = session
     }
 
-    func post(to url: URL, with data: Data?) {
-        session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default).resume()
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void) {
+        session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
+            switch dataResponse.result {
+            case .success(let success):
+                break
+            case .failure(let failure):
+                completion(.failure(.noConnectivityError))
+            }
+        }
     }
 }
 
 final class AlamoFireAdapterTests: XCTestCase {
     func test_post_ShouldMakeRequestWithValidUrlAndMethod() {
         let url = makeURL()
-        testRequest(data: makeValidData()) { request in
+        testRequestFor(data: makeValidData()) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
@@ -26,9 +33,25 @@ final class AlamoFireAdapterTests: XCTestCase {
 
     func test_post_ShouldMakeRequestWithNoData() {
         let sut = makeSut()
-        testRequest(url: makeURL(), data: nil) { request in
+        testRequestFor(url: makeURL(), data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
         }
+    }
+
+    func test_post_ShouldCompleteWithErrorWhenRequestCompletesWithError() {
+        let sut = makeSut()
+        URLProtocolStub.simulate(data: nil, response: nil, error: makeError())
+        let exp = expectation(description: "waiting")
+        sut.post(to: makeURL(), with: makeValidData()) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .noConnectivityError)
+            case .success(let data):
+                XCTFail("Expected error got \(result) instead")
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
     }
 }
 
@@ -43,10 +66,10 @@ extension AlamoFireAdapterTests {
         return sut
     }
 
-    func testRequest(url: URL = makeURL(), data: Data?, action: @escaping (URLRequest) -> Void) {
+    func testRequestFor(url: URL = makeURL(), data: Data?, action: @escaping (URLRequest) -> Void) {
         let sut = makeSut()
 
-        sut.post(to: url, with: data)
+        sut.post(to: url, with: data) { _ in }
 
         let exp = expectation(description: "waiting")
         URLProtocolStub.observerRequest { request in
@@ -59,9 +82,18 @@ extension AlamoFireAdapterTests {
 
 class URLProtocolStub: URLProtocol {
     static var emit: ((URLRequest) -> Void)?
+    static var error: Error?
+    static var data: Data?
+    static var response: HTTPURLResponse?
 
     static func observerRequest(completion: @escaping (URLRequest) -> Void) {
         URLProtocolStub.emit = completion
+    }
+
+    static func simulate(data: Data?, response: HTTPURLResponse?, error: Error?) {
+        URLProtocolStub.data = data
+        URLProtocolStub.response = response
+        URLProtocolStub.error = error
     }
 
     override open class func canInit(with request: URLRequest) -> Bool {
@@ -74,6 +106,18 @@ class URLProtocolStub: URLProtocol {
 
     override open func startLoading() {
         URLProtocolStub.emit?(request)
+        if let data = URLProtocolStub.data {
+            client?.urlProtocol(self, didLoad: data)
+        }
+
+        if let response = URLProtocolStub.response {
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        }
+        if let error = URLProtocolStub.error {
+            client?.urlProtocol(self, didFailWithError: error)
+        }
+        client?.urlProtocolDidFinishLoading(self)
+
     }
 
     override open func stopLoading() {}
