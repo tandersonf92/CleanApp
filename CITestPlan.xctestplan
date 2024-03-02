@@ -1,0 +1,49 @@
+{
+  "configurations" : [
+    {
+      "id" : "D7B4BC9E-3E93-4BB8-ABFA-53E3177C42FF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:CleanApp.xcodeproj",
+          "identifier" : "87A9F3982B8CFFE400B93A99",
+          "name" : "Domain"
+        },
+        {
+          "containerPath" : "container:CleanApp.xcodeproj",
+          "identifier" : "87A9F3A82B8D017D00B93A99",
+          "name" : "Data"
+        },
+        {
+          "containerPath" : "container:CleanApp.xcodeproj",
+          "identifier" : "87CF92A62B90FB16001FBC14",
+          "name" : "Infra"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanApp.xcodeproj",
+        "identifier" : "87A9F3AF2B8D017D00B93A99",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CleanApp.xcodeproj",
+        "identifier" : "87CF92AD2B90FB16001FBC14",
+        "name" : "InfraTests"
+      }
+    }
+  ],
+  "version" : 1
+}

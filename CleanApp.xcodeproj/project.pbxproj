@@ -102,6 +102,7 @@
 		87ADC1FA2B8E727600165FDD /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 		87C87B8B2B93CB49000B70CC /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		87C87B8F2B93CBFF000B70CC /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
+		87C87B932B93D242000B70CC /* CITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CITestPlan.xctestplan; sourceTree = "<group>"; };
 		87CF92902B90B6D1001FBC14 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		87CF92932B90B968001FBC14 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		87CF92962B90C9FC001FBC14 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		87A9F3802B8CFE7D00B93A99 = {
 			isa = PBXGroup;
 			children = (
+				87C87B932B93D242000B70CC /* CITestPlan.xctestplan */,
 				87A9F39A2B8CFFE400B93A99 /* Domain */,
 				87A9F3AA2B8D017D00B93A99 /* Data */,
 				87A9F3B42B8D017D00B93A99 /* DataTests */,

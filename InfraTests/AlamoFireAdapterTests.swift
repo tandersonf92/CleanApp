@@ -43,6 +43,7 @@ final class AlamoFireAdapterTests: XCTestCase {
     }
 
     func test_post_ShouldCompleteWithErrorWhenRequestCompletesWithNon200() {
+        expectResult(.failure(.noConnectivityError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 300), error: nil))
         expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 400), error: nil))
         expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 450), error: nil))
         expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 499), error: nil))
@@ -95,5 +96,6 @@ extension AlamoFireAdapterTests {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1)    }
+        wait(for: [exp], timeout: 1)  
+    }
 }
