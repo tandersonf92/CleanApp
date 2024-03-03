@@ -64,7 +64,7 @@ final class SignUpPresenterTests: XCTestCase {
         let sut = makeSut(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
         let signUpViewModel = makeSignUpViewModel()
 
-        gemailValidatorSpy.simulateInvalidEmail()
+        emailValidatorSpy.simulateInvalidEmail()
         sut.signUp(viewModel: signUpViewModel)
 
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Email inválido"))
