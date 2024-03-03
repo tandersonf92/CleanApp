@@ -6,9 +6,11 @@ final class SignUpPresenter {
     private let alertView: AlertView
     private let emailValidator: EmailValidator
     private let addAccount: AddAccountUseCase
+    private let loadingView: LoadingView
 
-    public init(alertView: AlertView, emailValidator: EmailValidator, addAccount: AddAccountUseCase) {
+    public init(alertView: AlertView, loadingView: LoadingView, emailValidator: EmailValidator, addAccount: AddAccountUseCase) {
         self.alertView = alertView
+        self.loadingView = loadingView
         self.emailValidator = emailValidator
         self.addAccount = addAccount
     }
@@ -21,6 +23,7 @@ final class SignUpPresenter {
                                                   email: viewModel.email!,
                                                   password: viewModel.password!,
                                                   passwordConfirmation: viewModel.passwordConfirmation!)
+            loadingView.display(viewModel: LoadingViewModel(isLoading: true))
             addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
