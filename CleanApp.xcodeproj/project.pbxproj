@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		879BF3A62B94A764003D1A3A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; };
 		879BF3AB2B94A764003D1A3A /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */; };
+		879BF3B42B94A7E6003D1A3A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3B32B94A7E6003D1A3A /* File.swift */; };
 		87A9F3A12B8D004B00B93A99 /* AddAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9F3A02B8D004B00B93A99 /* AddAccountUseCase.swift */; };
 		87A9F3A32B8D010B00B93A99 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9F3A22B8D010B00B93A99 /* AccountModel.swift */; };
 		87A9F3B12B8D017D00B93A99 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A9F3A92B8D017D00B93A99 /* Data.framework */; };
@@ -142,6 +143,7 @@
 		879BF39E2B94A763003D1A3A /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3A52B94A764003D1A3A /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
+		879BF3B32B94A7E6003D1A3A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		87A9F3992B8CFFE400B93A99 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A9F3A02B8D004B00B93A99 /* AddAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCase.swift; sourceTree = "<group>"; };
 		87A9F3A22B8D010B00B93A99 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		879BF39F2B94A763003D1A3A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				879BF3B32B94A7E6003D1A3A /* File.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				TargetAttributes = {
 					879BF39D2B94A763003D1A3A = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					879BF3A42B94A764003D1A3A = {
 						CreatedOnToolsVersion = 15.2;
@@ -757,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				879BF3B42B94A7E6003D1A3A /* File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +883,7 @@
 		879BF3AD2B94A764003D1A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -904,6 +910,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -911,6 +918,7 @@
 		879BF3AE2B94A764003D1A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -944,6 +952,7 @@
 		879BF3AF2B94A764003D1A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R6666T3YAD;
@@ -961,6 +970,7 @@
 		879BF3B02B94A764003D1A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R6666T3YAD;
