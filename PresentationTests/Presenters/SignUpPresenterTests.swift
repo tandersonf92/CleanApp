@@ -38,6 +38,15 @@ final class SignUpPresenterTests: XCTestCase {
 
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "O campo Confirmar Senha é obrigatório"))
     }
+    
+    func test_SignUp_ShouldShowErrorMessageIfPasswordConfirmationNotMatch() {
+        let (sut, alertViewSpy) = makeSut()
+        let signUpViewModel = SignUpViewModel(name: "any_name", email: "any_email@email.com", password: "any_password", passwordConfirmation: "wrong_password")
+
+        sut.signUp(viewModel: signUpViewModel)
+
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Falha ao confirmar senha"))
+    }
 }
 
 extension SignUpPresenterTests {
