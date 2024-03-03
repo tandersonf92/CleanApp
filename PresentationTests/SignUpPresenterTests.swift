@@ -37,8 +37,7 @@ protocol AlertView {
 final class SignUpPresenterTests: XCTestCase {
 
     func test_SignUp_ShouldShowErrorMessageIfNameIsNotProvided() {
-        let alertViewSpy = AlertViewSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy)
+        let (sut, alertViewSpy) = makeSut()
         let signUpViewModel = SignUpViewModel(email: "any_email@email.com", password: "any_password", passwordConfirmation: "any_password")
 
         sut.signUp(viewModel: signUpViewModel)
@@ -54,7 +53,11 @@ extension SignUpPresenterTests {
         func showMessage(viewModel: AlertViewModel) {
             self.viewModel = viewModel
         }
-        
+    }
 
+    func makeSut() -> (sut: SignUpPresenter, alertViewSpy: AlertViewSpy) {
+        let alertViewSpy = AlertViewSpy()
+        let sut = SignUpPresenter(alertView: alertViewSpy)
+        return (sut, alertViewSpy)
     }
 }
