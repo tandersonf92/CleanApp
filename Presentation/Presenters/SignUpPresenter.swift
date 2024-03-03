@@ -21,8 +21,13 @@ final class SignUpPresenter {
                                                email: viewModel.email!,
                                                password: viewModel.password!,
                                                passwordConfirmation: viewModel.passwordConfirmation!)
-            addAccount.add(addAccountModel: addAccountModel) { _ in
-
+            addAccount.add(addAccountModel: addAccountModel) { result in
+                switch result {
+                case .failure:
+                    self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+                case .success:
+                    break
+                }
             }
         }
     }
