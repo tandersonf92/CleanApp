@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8771436E2B99DF1C005B1DC1 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771436D2B99DF1C005B1DC1 /* TestExtensions.swift */; };
 		877143712B99EBC3005B1DC1 /* UIViewControler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877143702B99EBC3005B1DC1 /* UIViewControler+Extensions.swift */; };
+		877143732B99ECF2005B1DC1 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877143722B99ECF2005B1DC1 /* StoryBoarded.swift */; };
 		879BF3A62B94A764003D1A3A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; };
 		879BF3AB2B94A764003D1A3A /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */; };
 		879BF3B42B94A7E6003D1A3A /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3B32B94A7E6003D1A3A /* SignUpPresenter.swift */; };
@@ -207,6 +208,7 @@
 /* Begin PBXFileReference section */
 		8771436D2B99DF1C005B1DC1 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		877143702B99EBC3005B1DC1 /* UIViewControler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Extensions.swift"; sourceTree = "<group>"; };
+		877143722B99ECF2005B1DC1 /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		879BF39E2B94A763003D1A3A /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3A52B94A764003D1A3A /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				877143702B99EBC3005B1DC1 /* UIViewControler+Extensions.swift */,
+				877143722B99ECF2005B1DC1 /* StoryBoarded.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877143732B99ECF2005B1DC1 /* StoryBoarded.swift in Sources */,
 				877143712B99EBC3005B1DC1 /* UIViewControler+Extensions.swift in Sources */,
 				87B0CCE52B95EA5F0010867E /* SignUpViewController.swift in Sources */,
 			);
