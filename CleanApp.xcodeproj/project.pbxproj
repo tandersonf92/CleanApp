@@ -334,6 +334,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8771436A2B99DE8D005B1DC1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8771436B2B99DEBF005B1DC1 /* SignUp */,
+				87B0CCE42B95EA5F0010867E /* SignUpViewController.swift */,
+				87B0CCE62B95EA840010867E /* SignUp.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8771436B2B99DEBF005B1DC1 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		879BF39F2B94A763003D1A3A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,8 +575,7 @@
 		87B0CCD02B95E6C80010867E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				87B0CCE42B95EA5F0010867E /* SignUpViewController.swift */,
-				87B0CCE62B95EA840010867E /* SignUp.storyboard */,
+				8771436A2B99DE8D005B1DC1 /* Scenes */,
 			);
 			path = UI;
 			sourceTree = "<group>";
