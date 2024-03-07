@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8771436E2B99DF1C005B1DC1 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771436D2B99DF1C005B1DC1 /* TestExtensions.swift */; };
 		879BF3A62B94A764003D1A3A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; };
 		879BF3AB2B94A764003D1A3A /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */; };
 		879BF3B42B94A7E6003D1A3A /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3B32B94A7E6003D1A3A /* SignUpPresenter.swift */; };
@@ -203,6 +204,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8771436D2B99DF1C005B1DC1 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		879BF39E2B94A763003D1A3A /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3A52B94A764003D1A3A /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenterTests.swift; sourceTree = "<group>"; };
@@ -349,6 +351,14 @@
 			children = (
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8771436C2B99DF14005B1DC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8771436D2B99DF1C005B1DC1 /* TestExtensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		879BF39F2B94A763003D1A3A /* Presentation */ = {
@@ -583,6 +593,7 @@
 		87B0CCDA2B95E6C80010867E /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				8771436C2B99DF14005B1DC1 /* Helpers */,
 				87B0CCDB2B95E6C80010867E /* SignUpViewControllerTests.swift */,
 			);
 			path = UITests;
@@ -1125,6 +1136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B0CCDC2B95E6C80010867E /* SignUpViewControllerTests.swift in Sources */,
+				8771436E2B99DF1C005B1DC1 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
