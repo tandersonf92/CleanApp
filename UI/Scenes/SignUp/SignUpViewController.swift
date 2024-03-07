@@ -9,7 +9,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
-    
+
     var signUp: ((SignUpViewModel) -> Void)?
 
     override func viewDidLoad() {
@@ -38,6 +38,13 @@ extension SignUpViewController: LoadingView {
 
 extension SignUpViewController: AlertView {
     func showMessage(viewModel: Presentation.AlertViewModel) {
-        
+        let alert = UIAlertController(title: viewModel.title,
+                                      message: viewModel.message,
+                                      preferredStyle: .alert)
+
+        alert.addAction(.init(title: "Ok",
+                              style: .default))
+
+        present(alert, animated: true)
     }
 }
