@@ -1,7 +1,7 @@
 import Foundation
 import Domain
 
-final class SignUpPresenter {
+public final class SignUpPresenter {
 
     private let alertView: AlertView
     private let emailValidator: EmailValidator
