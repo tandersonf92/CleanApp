@@ -1,18 +1,14 @@
-import Data
-import Infra
+import Domain
 import Foundation
 import Presentation
 import UI
 import Validation
 
 enum SignUpFactory {
-    static func build() -> SignUpViewController {
+    static func build(addAccount: AddAccountUseCase) -> SignUpViewController {
         let controller = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
-        let alamofireAdapter = AlamoFireAdapter()
-        let removeAddAccount = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
-        let presenter = SignUpPresenter(alertView: controller, loadingView: controller, emailValidator: emailValidatorAdapter, addAccount: removeAddAccount)
+        let presenter = SignUpPresenter(alertView: controller, loadingView: controller, emailValidator: emailValidatorAdapter, addAccount: addAccount)
         controller.signUp = presenter.signUp
 
         return controller
