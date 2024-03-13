@@ -5,9 +5,15 @@ import Infra
 import Foundation
 
 enum UseCaseFactory {
+    private static let httpClient = AlamoFireAdapter()
+
+    private static let apiBaseUrl = "https://clean-node-api.herokuapp.com/api"
+
+    private static func makeUrl(path: String) -> URL {
+        URL(string: "\(apiBaseUrl)/\(path)")!
+    }
+
     static func makeRemoteAddAccount() -> AddAccountUseCase {
-        let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
-        let alamofireAdapter = AlamoFireAdapter()
-        return RemoteAddAccount(url: url, httpClient: alamofireAdapter)
+        RemoteAddAccount(url: makeUrl(path: "signup"), httpClient: httpClient)
     }
 }
