@@ -7,7 +7,7 @@ import Foundation
 enum UseCaseFactory {
     private static let httpClient = AlamoFireAdapter()
 
-    private static let apiBaseUrl = "https://clean-node-api.herokuapp.com/api"
+    private static let apiBaseUrl = Environment.variable(.apiBaseURL)
 
     private static func makeUrl(path: String) -> URL {
         URL(string: "\(apiBaseUrl)/\(path)")!
