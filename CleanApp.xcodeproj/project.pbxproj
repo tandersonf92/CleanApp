@@ -12,6 +12,8 @@
 		877143732B99ECF2005B1DC1 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877143722B99ECF2005B1DC1 /* StoryBoarded.swift */; };
 		8785796F2BA1CA32009F1CB9 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785796E2BA1CA32009F1CB9 /* UseCaseFactory.swift */; };
 		878579722BA1CAE6009F1CB9 /* SignUpComposers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878579712BA1CAE6009F1CB9 /* SignUpComposers.swift */; };
+		878579732BA1CD45009F1CB9 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CADC2B9526C100FD407E /* AddAccountSpy.swift */; };
+		878579742BA1CD83009F1CB9 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92992B90F64B001FBC14 /* TestExtensions.swift */; };
 		879BF3A62B94A764003D1A3A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; };
 		879BF3AB2B94A764003D1A3A /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3AA2B94A764003D1A3A /* SignUpPresenterTests.swift */; };
 		879BF3B42B94A7E6003D1A3A /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3B32B94A7E6003D1A3A /* SignUpPresenter.swift */; };
@@ -1593,6 +1595,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878579732BA1CD45009F1CB9 /* AddAccountSpy.swift in Sources */,
+				878579742BA1CD83009F1CB9 /* TestExtensions.swift in Sources */,
 				87AA99B42BA0736700A3769C /* MainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

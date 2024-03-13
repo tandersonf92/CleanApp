@@ -1,16 +1,11 @@
-//
-//  MainTests.swift
-//  MainTests
-//
-//  Created by Cora on 12/03/24.
-//
-
 import XCTest
 @testable import Main
 
 final class MainTests: XCTestCase {
 
-    func test_() {
+    func test_Ui_Presentation_Integration() {
+        let sut = SignUpComposer.composeControllerWith(addAccount: AddAccountSpy())
 
+        checkMemoryLeak(for: sut)
     }
 }

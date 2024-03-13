@@ -1,7 +1,7 @@
 import Domain
 import UI
 
-enum SignUpComposers {
+enum SignUpComposer {
     static func composeControllerWith(addAccount: AddAccountUseCase) -> SignUpViewController {
         SignUpFactory.build(addAccount: addAccount)
     }
