@@ -1,7 +1,7 @@
 import XCTest
 @testable import Main
 
-final class MainTests: XCTestCase {
+final class SignUpComposerTests: XCTestCase {
 
     func test_Ui_Presentation_Integration() {
         let sut = SignUpComposer.composeControllerWith(addAccount: AddAccountSpy())
