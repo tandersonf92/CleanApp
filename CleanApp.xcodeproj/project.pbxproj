@@ -23,6 +23,7 @@
 		879BF3B62B94AE4D003D1A3A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87A9F3992B8CFFE400B93A99 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		879BF3BE2B94AF0B003D1A3A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3BD2B94AF0B003D1A3A /* AlertView.swift */; };
 		879BF3C32B94B209003D1A3A /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BF3C22B94B209003D1A3A /* EmailValidator.swift */; };
+		87A2C6A62BA319B800CDD5DC /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CAE12B95276900FD407E /* TestFactories.swift */; };
 		87A5CACB2B950C7D00FD407E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92A02B90F725001FBC14 /* AccountModelFactory.swift */; };
 		87A5CACC2B95173100FD407E /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92992B90F64B001FBC14 /* TestExtensions.swift */; };
 		87A5CACE2B9518BC00FD407E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CACD2B9518BC00FD407E /* LoadingView.swift */; };
@@ -1629,6 +1630,7 @@
 			files = (
 				878579732BA1CD45009F1CB9 /* AddAccountSpy.swift in Sources */,
 				878579742BA1CD83009F1CB9 /* TestExtensions.swift in Sources */,
+				87A2C6A62BA319B800CDD5DC /* TestFactories.swift in Sources */,
 				87AA99B42BA0736700A3769C /* SignUpComposerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
