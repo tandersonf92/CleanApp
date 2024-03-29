@@ -424,6 +424,7 @@
 		87C25C9D2BA85FE300713174 /* RequiredFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredFieldValidation.swift; sourceTree = "<group>"; };
 		87C25CA22BA8617500713174 /* CompareFieldsValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareFieldsValidationTests.swift; sourceTree = "<group>"; };
 		87C25CA42BA861C700713174 /* CompareFieldsValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareFieldsValidation.swift; sourceTree = "<group>"; };
+		87C31CE22BB779410025F2C1 /* Core.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Core.xctestplan; sourceTree = "<group>"; };
 		87C87B8B2B93CB49000B70CC /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		87C87B8F2B93CBFF000B70CC /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		87C87B932B93D242000B70CC /* CITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CITestPlan.xctestplan; sourceTree = "<group>"; };
@@ -772,6 +773,7 @@
 		87A9F3802B8CFE7D00B93A99 = {
 			isa = PBXGroup;
 			children = (
+				87C31CE22BB779410025F2C1 /* Core.xctestplan */,
 				8796ECA02BA47C8E00F96DDC /* Validation 1.xctestplan */,
 				8796EC8A2BA471AE00F96DDC /* Presentation.xctestplan */,
 				87C87B932B93D242000B70CC /* CITestPlan.xctestplan */,
