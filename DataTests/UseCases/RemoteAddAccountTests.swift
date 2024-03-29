@@ -19,6 +19,7 @@ final class RemoteAddAccountTests: XCTestCase {
 
         sut.add(addAccountModel: addAccountModel) { _ in }
 
+        // Flacky test
         XCTAssertEqual(httpClientSpy.data, addAccountModel.toData())
     }
 

@@ -17,15 +17,15 @@ final class SignUpViewControllerTests: XCTestCase {
         XCTAssertNotNil(makeSut() as AlertView)
     }
 
-    func test_SaveButtonCallsSignUpOnTap() {
+    func test_SaveButtonCallsSignUpOnTap() throws {
         var signUpViewModel: SignUpViewModel?
         let sut = makeSut() { signUpViewModel = $0 }
 
         sut.saveButton?.simulateTap()
-        let name = sut.nameTextField?.text
-        let email = sut.emailTextField?.text
-        let password = sut.passwordTextField?.text
-        let passwordConfirmation = sut.passwordConfirmationTextField.text
+        let name = try XCTUnwrap(sut.nameTextField?.text)
+        let email = try XCTUnwrap(sut.emailTextField?.text)
+        let password = try XCTUnwrap(sut.passwordTextField?.text)
+        let passwordConfirmation = try XCTUnwrap(sut.passwordConfirmationTextField.text)
 
         XCTAssertEqual(signUpViewModel, SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation))
     }

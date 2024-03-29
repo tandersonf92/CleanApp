@@ -36,7 +36,6 @@
 		87A5CACC2B95173100FD407E /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92992B90F64B001FBC14 /* TestExtensions.swift */; };
 		87A5CACE2B9518BC00FD407E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CACD2B9518BC00FD407E /* LoadingView.swift */; };
 		87A5CAD12B95250900FD407E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CAD02B95250900FD407E /* SignUpViewModel.swift */; };
-		87A5CAD32B95255A00FD407E /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CAD22B95255A00FD407E /* SignUpMapper.swift */; };
 		87A5CAD72B95265D00FD407E /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CAD62B95265D00FD407E /* AlertViewSpy.swift */; };
 		87A5CADD2B9526C100FD407E /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CADC2B9526C100FD407E /* AddAccountSpy.swift */; };
 		87A5CADF2B9526ED00FD407E /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5CADE2B9526ED00FD407E /* LoadingViewSpy.swift */; };
@@ -380,7 +379,6 @@
 		87A2C6A82BA323A500CDD5DC /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		87A5CACD2B9518BC00FD407E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		87A5CAD02B95250900FD407E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		87A5CAD22B95255A00FD407E /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		87A5CAD62B95265D00FD407E /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		87A5CAD92B95268B00FD407E /* EmailValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpy.swift; sourceTree = "<group>"; };
 		87A5CADC2B9526C100FD407E /* AddAccountSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountSpy.swift; sourceTree = "<group>"; };
@@ -725,7 +723,6 @@
 			children = (
 				879BF3B32B94A7E6003D1A3A /* SignUpPresenter.swift */,
 				87A5CAD02B95250900FD407E /* SignUpViewModel.swift */,
-				87A5CAD22B95255A00FD407E /* SignUpMapper.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1651,7 +1648,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A5CAD32B95255A00FD407E /* SignUpMapper.swift in Sources */,
 				879BF3B42B94A7E6003D1A3A /* SignUpPresenter.swift in Sources */,
 				87A5CACE2B9518BC00FD407E /* LoadingView.swift in Sources */,
 				87A5CAD12B95250900FD407E /* SignUpViewModel.swift in Sources */,

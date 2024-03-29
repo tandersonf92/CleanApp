@@ -24,7 +24,16 @@ public final class SignUpViewController: UIViewController, StoryBoarded {
     }
 
     @objc private func saveButtonTapped() {
-        signUp?(SignUpViewModel(name: nameTextField.text, email: emailTextField.text, password: passwordTextField.text, passwordConfirmation: passwordConfirmationTextField.text))
+        if let nameText = nameTextField.text,
+           let emailText = emailTextField.text,
+           let passwordText = passwordTextField.text,
+           let passwordConfirmationText = passwordConfirmationTextField.text {
+               signUp?(SignUpViewModel(name: nameText,
+                                       email: emailText,
+                                       password: passwordText,
+                                       passwordConfirmation: passwordConfirmationText))
+           }
+
     }
 }
 
