@@ -1,7 +1,5 @@
-import Presentation
+import Infra
 import XCTest
-
-@testable import Validation
 
 final class EmailValidatorAdapterTests: XCTestCase {
 

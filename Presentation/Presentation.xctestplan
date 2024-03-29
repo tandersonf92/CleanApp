@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "D78B2F4B-92C1-4172-B1FD-01BB9BD773B1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CleanApp.xcodeproj",
+        "identifier" : "879BF3A42B94A764003D1A3A",
+        "name" : "PresentationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
