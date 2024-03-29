@@ -14,8 +14,6 @@ enum SignUpComposer {
     }
 
     public static func makeValidations()  ->[Validation] {
-
-
         return [RequiredFieldValidation(fieldName: "name", fieldLabel: "Nome"),
                 RequiredFieldValidation(fieldName: "email", fieldLabel: "Email"),
                 EmailValidation(fieldName: "email", fieldLabel: "Email", emailValidator: EmailValidatorAdapter()),
