@@ -59,7 +59,7 @@ final class RemoteAddAccountTests: XCTestCase {
     func test_shouldNotCompleteIfSutHasBeenDeallocated() {
         let httpClientSpy = HTTPClientSpy()
         var sut: RemoteAddAccount? = RemoteAddAccount(url: makeURL(), httpClient: httpClientSpy)
-        var result: Result<AccountModel, DomainError>?
+        var result: AddAccountUseCase.Result?
 
         sut?.add(addAccountModel: makeAddAccountModel()) { result = $0 }
 
@@ -80,7 +80,7 @@ extension RemoteAddAccountTests {
         return (sut, httpClientSpy)
     }
 
-    func expect(_ sut: RemoteAddAccount, completeWith expectedResult: Result<AccountModel, DomainError>, when action: () -> Void, file: StaticString = #filePath,
+    func expect(_ sut: RemoteAddAccount, completeWith expectedResult: AddAccountUseCase.Result, when action: () -> Void, file: StaticString = #filePath,
                 line: UInt = #line) {
         let exp = expectation(description: "waiting")
 
