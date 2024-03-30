@@ -12,10 +12,9 @@ public final class NavigationController: UINavigationController {
     }
     
     private func setup() {
-        navigationBar.barTintColor = Color.primaryDark
-        navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationBar.isTranslucent = false
-        navigationBar.barStyle = .black
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = Color.primaryDark
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBar.scrollEdgeAppearance = appearance
     }
 }
