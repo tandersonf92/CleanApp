@@ -20,7 +20,7 @@ final class SignUpComposerTests: XCTestCase {
     }
 
     func test_SignUpComposeWithCorrectValidations() throws {
-        let validations = SignUpComposer.makeValidations()
+        let validations = makeSignUpValidations()
         let nameValidation = try XCTUnwrap(validations[0] as? RequiredFieldValidation)
         let emailFieldValidation = try XCTUnwrap(validations[1] as? RequiredFieldValidation)
         let emailValidation = try XCTUnwrap(validations[2] as? EmailValidation)
@@ -42,7 +42,7 @@ extension SignUpComposerTests {
     func makeSut(file: StaticString = #filePath,
                  line: UInt = #line) -> (sut: SignUpViewController, addAccountSpy: AddAccountSpy) {
         let addAccountSpy = AddAccountSpy()
-        let sut = SignUpComposer.composeControllerWith(addAccount: MainQueueDispatchDecorator(addAccountSpy))
+        let sut = makeSignUpComtroller(addAccount: MainQueueDispatchDecorator(addAccountSpy))
         checkMemoryLeak(for: sut, file: file, line: line)
         checkMemoryLeak(for: addAccountSpy, file: file, line: line)
 
