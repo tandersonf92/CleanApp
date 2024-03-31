@@ -28,13 +28,28 @@ final class LoginPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_SignUp_ShouldCallAuthenticationtWithCorrectValues() {
+    func test_Login_ShouldCallAuthenticationtWithCorrectValues() {
         let authenticationSpy = AuthenticationSpy()
         let sut = makeSut(authentication: authenticationSpy)
 
         sut.login(viewModel: makeLoginViewModel())
 
         XCTAssertEqual(authenticationSpy.authenticationModel, makeAuthenticationModel())
+    }
+
+    func test_Login_ShouldShowGenericErrorMessageIfAuthenticationFails() {
+        let alertViewSpy = AlertViewSpy()
+        let authenticationSpy = AuthenticationSpy()
+        let sut = makeSut(alertView: alertViewSpy, authentication: authenticationSpy)
+
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel, AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+            exp.fulfill()
+        }
+        sut.login(viewModel: makeLoginViewModel())
+        authenticationSpy.completeWithError(.unexpected)
+        wait(for: [exp], timeout: 1)
     }
 }
 
