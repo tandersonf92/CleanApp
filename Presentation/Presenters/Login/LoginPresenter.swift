@@ -6,17 +6,20 @@ public final class LoginPresenter {
     private let validation: Validation
     private let alertView: AlertView
     private let authentication: AuthenticationUseCase
+    private let loadingView: LoadingView
 
-    public init(validation: Validation, alertView: AlertView, authentication: AuthenticationUseCase) {
+    public init(validation: Validation, alertView: AlertView, authentication: AuthenticationUseCase, loadingView: LoadingView) {
         self.validation = validation
         self.alertView = alertView
         self.authentication = authentication
+        self.loadingView = loadingView
     }
 
     public func login(viewModel: LoginViewModel) {
         if let message = validation.validate(data: viewModel.toJson()) {
             alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
+            loadingView.display(viewModel: LoadingViewModel(isLoading: true))
             authentication.auth(authenticationModel: viewModel.toAuthenticationModel())  { [weak self] result in
                 guard let self = self else { return }
                 switch result {
@@ -28,6 +31,7 @@ public final class LoginPresenter {
                 case .success:
                     alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Login feito com sucesso."))
                 }
+                loadingView.display(viewModel: LoadingViewModel(isLoading: false))
             }
         }
     }
