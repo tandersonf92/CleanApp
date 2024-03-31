@@ -29,6 +29,14 @@ final class RemoteAuthenticationTests: XCTestCase {
             httpClientSpy.completeWithError(.noConnectivityError)
         })
     }
+
+    func test_auth_shouldCompleteWithExpiredSessionErrorIfClientCompleteWithUnauthorized() {
+        let (sut, httpClientSpy) = makeSut()
+
+        expect(sut, completeWith: .failure(.expiredSession), when: {
+            httpClientSpy.completeWithError(.unauthorized)
+        })
+    }
 }
 
 
