@@ -54,6 +54,18 @@ final class RemoteAuthenticationTests: XCTestCase {
             httpClientSpy.completeWithData(makeInvalidData())
         })
     }
+
+    func test_shouldNotCompleteIfSutHasBeenDeallocated() {
+        let httpClientSpy = HTTPClientSpy()
+        var sut: RemoteAuthentication? = RemoteAuthentication(url: makeURL(), httpClient: httpClientSpy)
+        var result: AddAccountUseCase.Result?
+
+        sut?.auth(authenticationModel: makeAuthenticationModel()) { result = $0 }
+        sut = nil
+        httpClientSpy.completeWithError(.noConnectivityError)
+        
+        XCTAssertNil(result)
+    }
 }
 
 
