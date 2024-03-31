@@ -25,7 +25,8 @@ public final class LoginPresenter {
                     ? "Email e/ou senha inválidos"
                     : "Algo inesperado aconteceu, tente novamente em alguns instantes."
                     alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: errorMessage))
-                case .success: break
+                case .success:
+                    alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Login feito com sucesso."))
                 }
             }
         }
