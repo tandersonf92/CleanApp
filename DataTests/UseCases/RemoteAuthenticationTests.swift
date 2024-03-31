@@ -8,9 +8,18 @@ final class RemoteAuthenticationTests: XCTestCase {
         let (sut, httpClientSpy) = makeSut()
         let url = makeURL()
 
-        sut.auth()
+        sut.auth(authenticationModel: makeAuthenticationModel())
 
         XCTAssertEqual(httpClientSpy.urls, [url])
+    }
+
+    func test_add_shouldCallHttpClientWithCorrectData() {
+        let (sut, httpClientSpy) = makeSut()
+        let authenticationModel = makeAuthenticationModel()
+
+        sut.auth(authenticationModel: authenticationModel)
+
+        XCTAssertEqual(httpClientSpy.data, authenticationModel.toData())
     }
 }
 
