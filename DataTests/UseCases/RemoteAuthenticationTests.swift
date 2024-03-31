@@ -4,22 +4,30 @@ import XCTest
 
 
 final class RemoteAuthenticationTests: XCTestCase {
-    func test_add_shouldCallHttpClientWithCorrectUrl() {
+    func test_auth_shouldCallHttpClientWithCorrectUrl() {
         let (sut, httpClientSpy) = makeSut()
         let url = makeURL()
 
-        sut.auth(authenticationModel: makeAuthenticationModel())
+        sut.auth(authenticationModel: makeAuthenticationModel()) { _ in }
 
         XCTAssertEqual(httpClientSpy.urls, [url])
     }
 
-    func test_add_shouldCallHttpClientWithCorrectData() {
+    func test_auth_shouldCallHttpClientWithCorrectData() {
         let (sut, httpClientSpy) = makeSut()
         let authenticationModel = makeAuthenticationModel()
 
-        sut.auth(authenticationModel: authenticationModel)
+        sut.auth(authenticationModel: authenticationModel) { _ in }
 
         XCTAssertEqual(httpClientSpy.data, authenticationModel.toData())
+    }
+
+    func test_auth_shouldCompleteWithErrorIfClientCompleteWithError() {
+        let (sut, httpClientSpy) = makeSut()
+
+        expect(sut, completeWith: .failure(.unexpected), when: {
+            httpClientSpy.completeWithError(.noConnectivityError)
+        })
     }
 }
 
@@ -35,22 +43,22 @@ extension RemoteAuthenticationTests {
         return (sut, httpClientSpy)
     }
 
-//    func expect(_ sut: RemoteAddAccount, completeWith expectedResult: AddAccountUseCase.Result, when action: () -> Void, file: StaticString = #filePath,
-//                line: UInt = #line) {
-//        let exp = expectation(description: "waiting")
-//
-//        sut.add(addAccountModel: makeAddAccountModel()) { receivedResult in
-//            switch (expectedResult, receivedResult) {
-//            case  (.success(let expectedAccount), .success(let receivedAccount)):
-//                XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
-//            case  (.failure(let expectedError), .failure(let receivedError)):
-//                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
-//            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead", file: file, line: line)
-//            }
-//            exp.fulfill()
-//        }
-//        action()
-//        wait(for: [exp], timeout: 1)
-//    }
+    func expect(_ sut: RemoteAuthentication, completeWith expectedResult: AuthenticationUseCase.Result, when action: () -> Void, file: StaticString = #filePath,
+                line: UInt = #line) {
+        let exp = expectation(description: "waiting")
+
+        sut.auth(authenticationModel: makeAuthenticationModel()) { receivedResult in
+            switch (expectedResult, receivedResult) {
+            case  (.success(let expectedAccount), .success(let receivedAccount)):
+                XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
+            case  (.failure(let expectedError), .failure(let receivedError)):
+                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+        action()
+        wait(for: [exp], timeout: 1)
+    }
 }
 
