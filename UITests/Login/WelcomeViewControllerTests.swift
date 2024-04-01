@@ -4,9 +4,16 @@ import XCTest
 
 final class WelcomeViewControllerTests: XCTestCase {
 
-    func test_SaveButtonCallsSignUpOnTap() throws {
+    func test_LoginButtonCallsSignUpOnTap() throws {
         let (sut, buttonSpy) = makeSut()
         sut.loginButton?.simulateTap()
+
+        XCTAssertEqual(buttonSpy.clicks, 1)
+    }
+
+    func test_SignUpButtonCallsSignUpOnTap() throws {
+        let (sut, buttonSpy) = makeSut()
+        sut.signUpButton?.simulateTap()
 
         XCTAssertEqual(buttonSpy.clicks, 1)
     }
@@ -17,6 +24,7 @@ extension WelcomeViewControllerTests {
         let sut = WelcomeViewController.instantiate()
         let buttonSpy = ButtonSpy()
         sut.login = buttonSpy.onClick
+        sut.signUp = buttonSpy.onClick
         sut.loadViewIfNeeded()
         return (sut, buttonSpy)
     }
