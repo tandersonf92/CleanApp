@@ -3,7 +3,6 @@ import UIKit
 
 public final class LoginViewController: UIViewController, StoryBoarded {
 
-
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
@@ -18,6 +17,7 @@ public final class LoginViewController: UIViewController, StoryBoarded {
     }
 }
 
+// MARK: LoadingView
 extension LoginViewController: LoadingView {
     public func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
@@ -27,5 +27,19 @@ extension LoginViewController: LoadingView {
             view.isUserInteractionEnabled = true
             loadingIndicator.stopAnimating()
         }
+    }
+}
+
+// MARK: AlertView
+extension LoginViewController: AlertView {
+    public func showMessage(viewModel: Presentation.AlertViewModel) {
+        let alert = UIAlertController(title: viewModel.title,
+                                      message: viewModel.message,
+                                      preferredStyle: .alert)
+
+        alert.addAction(.init(title: "Ok",
+                              style: .default))
+
+        present(alert, animated: true)
     }
 }
