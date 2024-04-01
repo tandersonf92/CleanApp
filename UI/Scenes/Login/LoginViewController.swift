@@ -3,8 +3,12 @@ import UIKit
 
 public final class LoginViewController: UIViewController, StoryBoarded {
 
+    @IBOutlet weak var emailTextField: RoundedTextField!
+    @IBOutlet weak var passwordTextField: RoundedTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    public var login: ((LoginViewModel) -> Void)?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +18,15 @@ public final class LoginViewController: UIViewController, StoryBoarded {
     private func configure() {
         title = "4Devs"
         loginButton.layer.cornerRadius = 5
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        hideKeyboardOnTap()
+    }
+
+    @objc private func loginButtonTapped() {
+        if let emailText = emailTextField.text,
+           let passwordText = passwordTextField.text {
+               login?(LoginViewModel(email: emailText, password: passwordText))
+           }
     }
 }
 
