@@ -72,7 +72,7 @@
 		87AD15CB2BBA0590003C2713 /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15CA2BBA0590003C2713 /* RemoteAuthenticationTests.swift */; };
 		87AD15CD2BBA068E003C2713 /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15CC2BBA068E003C2713 /* RemoteAuthentication.swift */; };
 		87AD15D12BBA10D6003C2713 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15D02BBA10D6003C2713 /* LoginPresenterTests.swift */; };
-		87AD15D32BBA1312003C2713 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15D22BBA1312003C2713 /* LoginViewModel.swift */; };
+		87AD15D32BBA1312003C2713 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15D22BBA1312003C2713 /* LoginRequest.swift */; };
 		87AD15D52BBA1370003C2713 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15D42BBA1370003C2713 /* LoginPresenter.swift */; };
 		87AD15D72BBA15A4003C2713 /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD15D62BBA15A4003C2713 /* AuthenticationSpy.swift */; };
 		87ADC1F32B8E711100165FDD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADC1F22B8E711100165FDD /* Model.swift */; };
@@ -434,7 +434,7 @@
 		87AD15CA2BBA0590003C2713 /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
 		87AD15CC2BBA068E003C2713 /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
 		87AD15D02BBA10D6003C2713 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
-		87AD15D22BBA1312003C2713 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		87AD15D22BBA1312003C2713 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		87AD15D42BBA1370003C2713 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		87AD15D62BBA15A4003C2713 /* AuthenticationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		87ADC1F22B8E711100165FDD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -968,7 +968,7 @@
 		87AD15CE2BBA10B0003C2713 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				87AD15D22BBA1312003C2713 /* LoginViewModel.swift */,
+				87AD15D22BBA1312003C2713 /* LoginRequest.swift */,
 				87AD15D42BBA1370003C2713 /* LoginPresenter.swift */,
 			);
 			path = Login;
@@ -1815,7 +1815,7 @@
 				879BF3B42B94A7E6003D1A3A /* SignUpPresenter.swift in Sources */,
 				87A5CACE2B9518BC00FD407E /* LoadingView.swift in Sources */,
 				87AD15D52BBA1370003C2713 /* LoginPresenter.swift in Sources */,
-				87AD15D32BBA1312003C2713 /* LoginViewModel.swift in Sources */,
+				87AD15D32BBA1312003C2713 /* LoginRequest.swift in Sources */,
 				87A5CAD12B95250900FD407E /* SignUpViewModel.swift in Sources */,
 				879BF3BE2B94AF0B003D1A3A /* AlertView.swift in Sources */,
 				8796EC8C2BA476F300F96DDC /* Validation.swift in Sources */,

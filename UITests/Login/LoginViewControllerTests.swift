@@ -18,19 +18,19 @@ final class LoginViewControllerTests: XCTestCase {
     }
 
     func test_SaveButtonCallsSignUpOnTap() throws {
-        var loginViewModel: LoginViewModel?
+        var loginViewModel: LoginRequest?
         let sut = makeSut() { loginViewModel = $0 }
 
         sut.loginButton?.simulateTap()
         let email = try XCTUnwrap(sut.emailTextField?.text)
         let password = try XCTUnwrap(sut.passwordTextField?.text)
 
-        XCTAssertEqual(loginViewModel, LoginViewModel(email: email, password: password))
+        XCTAssertEqual(loginViewModel, LoginRequest(email: email, password: password))
     }
 }
 
 extension LoginViewControllerTests {
-    func makeSut(loginSpy: ((LoginViewModel) -> Void)? = nil) -> LoginViewController {
+    func makeSut(loginSpy: ((LoginRequest) -> Void)? = nil) -> LoginViewController {
         let sut = LoginViewController.instantiate()
         sut.login = loginSpy
         sut.loadViewIfNeeded()

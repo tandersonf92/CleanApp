@@ -9,7 +9,7 @@ final class SignUpControllerFactoryTests: XCTestCase {
     func test_BackgroundRequest_ShouldCompleteOnMainThread() {
         let (sut, addAccountSpy) = makeSut()
         sut.loadViewIfNeeded()
-        sut.signUp?(makeSignUpViewModel())
+        sut.signUp?(makeSignUpRequest())
 
         let exp = expectation(description: "waiting")
         DispatchQueue.global().async {

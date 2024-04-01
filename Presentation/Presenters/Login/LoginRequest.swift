@@ -1,6 +1,6 @@
 import Domain
 
-public struct LoginViewModel: Model {
+public struct LoginRequest: Model {
     public var email: String
     public var password: String
 
