@@ -89,6 +89,8 @@
 		87B7BF5F2BB1A39300A0BE83 /* ValidationCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF5E2BB1A39300A0BE83 /* ValidationCompositeTests.swift */; };
 		87B7BF632BB1AB8300A0BE83 /* ValidationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF622BB1AB8300A0BE83 /* ValidationComposite.swift */; };
 		87B7BF662BB1ABC700A0BE83 /* ValidationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF652BB1ABC700A0BE83 /* ValidationSpy.swift */; };
+		87B7F1F62BBACAB00077728C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B7F1F52BBACAB00077728C /* Login.storyboard */; };
+		87B7F1F82BBACB150077728C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7F1F72BBACB150077728C /* LoginViewController.swift */; };
 		87C25C9A2BA85CF200713174 /* RequiredFieldValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C25C992BA85CF200713174 /* RequiredFieldValidationTests.swift */; };
 		87C25C9E2BA85FE300713174 /* RequiredFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C25C9D2BA85FE300713174 /* RequiredFieldValidation.swift */; };
 		87C25C9F2BA860CC00713174 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF92992B90F64B001FBC14 /* TestExtensions.swift */; };
@@ -440,6 +442,8 @@
 		87B7BF5E2BB1A39300A0BE83 /* ValidationCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCompositeTests.swift; sourceTree = "<group>"; };
 		87B7BF622BB1AB8300A0BE83 /* ValidationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComposite.swift; sourceTree = "<group>"; };
 		87B7BF652BB1ABC700A0BE83 /* ValidationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSpy.swift; sourceTree = "<group>"; };
+		87B7F1F52BBACAB00077728C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		87B7F1F72BBACB150077728C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87C25C992BA85CF200713174 /* RequiredFieldValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredFieldValidationTests.swift; sourceTree = "<group>"; };
 		87C25C9D2BA85FE300713174 /* RequiredFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredFieldValidation.swift; sourceTree = "<group>"; };
 		87C25CA22BA8617500713174 /* CompareFieldsValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareFieldsValidationTests.swift; sourceTree = "<group>"; };
@@ -604,6 +608,7 @@
 		8771436A2B99DE8D005B1DC1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				87B7F1F42BBACA910077728C /* Login */,
 				8771436B2B99DEBF005B1DC1 /* SignUp */,
 			);
 			path = Scenes;
@@ -1023,6 +1028,15 @@
 				87B0CCDB2B95E6C80010867E /* SignUpViewControllerTests.swift */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		87B7F1F42BBACA910077728C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				87B7F1F52BBACAB00077728C /* Login.storyboard */,
+				87B7F1F72BBACB150077728C /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		87C25C9B2BA85FD500713174 /* Protocols */ = {
@@ -1704,6 +1718,7 @@
 			files = (
 				87B0CCE72B95EA840010867E /* SignUp.storyboard in Resources */,
 				87D1AF682BB852CF007203BD /* Images.xcassets in Resources */,
+				87B7F1F62BBACAB00077728C /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1878,6 +1893,7 @@
 				87D1AF6F2BB85AD0007203BD /* RoundedTextField.swift in Sources */,
 				877143712B99EBC3005B1DC1 /* UIViewControler+Extensions.swift in Sources */,
 				87B0CCE52B95EA5F0010867E /* SignUpViewController.swift in Sources */,
+				87B7F1F82BBACB150077728C /* LoginViewController.swift in Sources */,
 				87D1AF6C2BB85A29007203BD /* Color.swift in Sources */,
 				87D1AF712BB85BC5007203BD /* NavigationController.swift in Sources */,
 				87D1AF6A2BB859D7007203BD /* UIColor+Extensions.swift in Sources */,
