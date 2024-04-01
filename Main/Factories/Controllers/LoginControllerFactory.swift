@@ -5,7 +5,7 @@ import UI
 
 func makeLoginController(authentication: AuthenticationUseCase) -> LoginViewController {
     let controller = LoginViewController.instantiate()
-    let validationComposite = ValidationComposite(validations: makeSignUpValidations())
+    let validationComposite = ValidationComposite(validations: makeLoginValidations())
     let presenter = LoginPresenter(validation: validationComposite,
                                    alertView: WeakVarProxy(controller),
                                    authentication: authentication,

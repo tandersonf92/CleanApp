@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let httpClient = makeAlamofireAdapter()
         let addAccount = makeRemoteAddAccount(httpClient: httpClient)
         let signUpController = makeSignUpController(addAccount: addAccount)
-        let navigationController = NavigationController(rootViewController: signUpController)
+        let authentication = makeRemoteAuthentication(httpClient: httpClient)
+        let loginViewController = makeLoginController(authentication: authentication)
+        let navigationController = NavigationController(rootViewController: loginViewController)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
