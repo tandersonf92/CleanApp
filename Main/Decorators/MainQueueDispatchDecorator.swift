@@ -24,3 +24,11 @@ extension MainQueueDispatchDecorator: AddAccountUseCase where T: AddAccountUseCa
         }
     }
 }
+
+extension MainQueueDispatchDecorator: AuthenticationUseCase where T: AuthenticationUseCase {
+    public func auth(authenticationModel: Domain.AuthenticationModel, completion: @escaping (AuthenticationUseCase.Result) -> Void) {
+        instance.auth(authenticationModel: authenticationModel) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}

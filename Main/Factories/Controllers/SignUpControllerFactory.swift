@@ -3,7 +3,7 @@ import Presentation
 import Validation
 import UI
 
-func makeSignUpComtroller(addAccount: AddAccountUseCase) -> SignUpViewController {
+func makeSignUpController(addAccount: AddAccountUseCase) -> SignUpViewController {
     let controller = SignUpViewController.instantiate()
     let validationComposite = ValidationComposite(validations: makeSignUpValidations())
     let presenter = SignUpPresenter(alertView: WeakVarProxy(controller),
