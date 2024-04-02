@@ -19,19 +19,27 @@ class WelcomeRouter {
 final class WelcomeRouterTests: XCTestCase {
 
     func test_GoToLogin_CallsNavWithCorrectVC() {
-        let loginFactorySpy = LoginFactorySpy()
-        let nav = NavigationController()
-        let sut = WelcomeRouter(nav: nav, loginFactory: loginFactorySpy.makeLogin)
+       let (sut, nav) = makeSut()
 
         sut.goToLogin()
         XCTAssertEqual(nav.viewControllers.count, 1)
         XCTAssertTrue(nav.viewControllers[0] is LoginViewController)
     }
+}
 
+extension WelcomeRouterTests {
+    func makeSut() -> (sut: WelcomeRouter, nav: NavigationController) {
+        let loginFactorySpy = LoginFactorySpy()
+        let nav = NavigationController()
+        let sut = WelcomeRouter(nav: nav, loginFactory: loginFactorySpy.makeLogin)
+        return (sut, nav)
+    }
+}
+
+extension WelcomeRouterTests {
     class LoginFactorySpy {
         func makeLogin() -> LoginViewController {
             LoginViewController.instantiate()
         }
     }
 }
-
