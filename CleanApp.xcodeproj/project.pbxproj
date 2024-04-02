@@ -1070,7 +1070,6 @@
 			isa = PBXGroup;
 			children = (
 				87B7F1F92BBACCD20077728C /* LoginViewControllerTests.swift */,
-				87B7F20A2BBB00AF0077728C /* WelcomeViewControllerTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1087,6 +1086,7 @@
 		87B7F2092BBB00270077728C /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				87B7F20A2BBB00AF0077728C /* WelcomeViewControllerTests.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
