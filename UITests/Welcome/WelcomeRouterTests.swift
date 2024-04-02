@@ -2,26 +2,6 @@ import XCTest
 
 @testable import UI
 
-class WelcomeRouter {
-    private let nav: NavigationController
-    private let loginFactory: () -> LoginViewController
-    private let signUpFactory: () -> SignUpViewController
-
-    init(nav: NavigationController, loginFactory: @escaping () -> LoginViewController, signUpFactory: @escaping () -> SignUpViewController) {
-        self.nav = nav
-        self.loginFactory = loginFactory
-        self.signUpFactory = signUpFactory
-    }
-
-    func goToLogin() {
-        nav.pushViewController(loginFactory())
-    }
-
-    func goToSignUp() {
-        nav.pushViewController(signUpFactory())
-    }
-}
-
 final class WelcomeRouterTests: XCTestCase {
 
     func test_GoToLogin_CallsNavWithCorrectVC() {
