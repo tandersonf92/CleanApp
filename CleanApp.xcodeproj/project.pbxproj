@@ -84,6 +84,7 @@
 		87B0CCE72B95EA840010867E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B0CCE62B95EA840010867E /* SignUp.storyboard */; };
 		87B0CCE82B95EFBE0010867E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; };
 		87B0CCE92B95EFBE0010867E /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 879BF39E2B94A763003D1A3A /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87B43D612BBC27350087D95A /* WelcomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B43D602BBC27350087D95A /* WelcomeRouterTests.swift */; };
 		87B7BF5B2BB19F1E00A0BE83 /* EmailValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF5A2BB19F1E00A0BE83 /* EmailValidationTests.swift */; };
 		87B7BF5D2BB1A26300A0BE83 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF5C2BB1A26300A0BE83 /* EmailValidation.swift */; };
 		87B7BF5F2BB1A39300A0BE83 /* ValidationCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7BF5E2BB1A39300A0BE83 /* ValidationCompositeTests.swift */; };
@@ -445,6 +446,7 @@
 		87B0CCDB2B95E6C80010867E /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		87B0CCE42B95EA5F0010867E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B0CCE62B95EA840010867E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		87B43D602BBC27350087D95A /* WelcomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouterTests.swift; sourceTree = "<group>"; };
 		87B7BF5A2BB19F1E00A0BE83 /* EmailValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidationTests.swift; sourceTree = "<group>"; };
 		87B7BF5C2BB1A26300A0BE83 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		87B7BF5E2BB1A39300A0BE83 /* ValidationCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCompositeTests.swift; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 			isa = PBXGroup;
 			children = (
 				87B7F20A2BBB00AF0077728C /* WelcomeViewControllerTests.swift */,
+				87B43D602BBC27350087D95A /* WelcomeRouterTests.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -1964,6 +1967,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B43D612BBC27350087D95A /* WelcomeRouterTests.swift in Sources */,
 				87B7F1FA2BBACCD20077728C /* LoginViewControllerTests.swift in Sources */,
 				87B0CCDC2B95E6C80010867E /* SignUpViewControllerTests.swift in Sources */,
 				87B7F20B2BBB00AF0077728C /* WelcomeViewControllerTests.swift in Sources */,
