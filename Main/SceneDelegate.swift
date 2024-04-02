@@ -16,11 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let httpClient = makeAlamofireAdapter()
-        let addAccount = makeRemoteAddAccount(httpClient: httpClient)
-        let signUpController = makeSignUpController(addAccount: addAccount)
         let authentication = makeRemoteAuthentication(httpClient: httpClient)
         let loginViewController = makeLoginController(authentication: authentication)
-        let navigationController = NavigationController(rootViewController: loginViewController)
+        let navigationController = NavigationController()
+        navigationController.setRootViewController(loginViewController)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
